@@ -1,0 +1,28 @@
+{
+    "arch": [
+        "aarch64",
+        "amd64",
+        "armv7"
+    ],
+    "codenotary": "alexandrep.github@gmail.com",
+    "description": "A modern (fully static, fast), secure (fully proxied), highly customizable application dashboard with integrations for more than 25 services and translations for over 15 languages. Easily configured via YAML files (or discovery via docker labels).",
+    "init": false,
+    "image": "ghcr.io/alexbelgium/homepage-{arch}",
+    "map": [
+        "config:rw",
+        "share:rw",
+        "ssl:rw"
+    ],
+    "name": "Homepage",
+    "options": {},
+    "ports": {
+        "3000/tcp": 3000
+    },
+    "ports_description": {
+        "3000/tcp": "Web interface"
+    },
+    "schema": {},
+    "slug": "homepage",
+    "url": "https://github.com/alexbelgium/hassio-addons",
+    "version": "0.5.4"
+}

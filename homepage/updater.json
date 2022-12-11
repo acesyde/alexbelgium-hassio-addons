@@ -1,0 +1,9 @@
+{
+    "github_beta": "true",
+    "last_update": "08-11-2022",
+    "repository": "alexbelgium/hassio-addons",
+    "slug": "homepage",
+    "source": "github",
+    "upstream_repo": "ghcr.io/benphelps/homepage",
+    "upstream_version": "0.5.4"
+}
