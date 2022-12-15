@@ -10,6 +10,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
 [![GitHub Super-Linter](https://github.com/alexbelgium/hassio-addons/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 [![Builder](https://github.com/alexbelgium/hassio-addons/workflows/Builder/badge.svg)](https://github.com/alexbelgium/hassio-addons/actions/workflows/builder.yaml)
+[![Statistics](https://github.com/alexbelgium/hassio-addons/workflows/Generate%20weekly%20stats/badge.svg)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly_stats.yaml)
 
 [support-badge]: https://camo.githubusercontent.com/f4dbb995049f512fdc97fcc9e022ac243fa38c408510df9d46c7467d0970d959/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f537570706f72742d7468726561642d677265656e2e737667
 
@@ -37,6 +38,20 @@ home to the next level.
 [![Add repository on my Home Assistant][repository-badge]][repository-url]
 
 If you want to do add the repository manually, please follow the procedure highlighted in the [Home Assistant website](https://home-assistant.io/hassio/installing_third_party_addons). Use the following URL to add this repository: https://github.com/alexbelgium/hassio-addons
+
+## Statistics
+
+Number of addons in the repository : 73
+
+Total number of addons installed : 3908
+  - amd64: 58%
+  - aarch64: 39%
+  - armv7: 4%
+
+Top 3 most installed addons :
+  1. Portainer (555x)
+  2. Epicgamesfree (313x)
+  3. Filebrowser (264x)
 
 ## Add-ons provided by this repository
 
@@ -154,7 +169,7 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![armv7no][armv7no-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/file-search.svg) [Filebrowser](filebrowser/) : filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files
+&#10003; ![image](https://api.iconify.design/mdi/file-search.svg) [Filebrowser (264x)](filebrowser/) : filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.json)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fupdater.json)
@@ -451,7 +466,7 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![armv7][armv7-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/docker.svg) [Portainer](portainer/) : Manage your Docker environment with ease
+&#10003; ![image](https://api.iconify.design/mdi/docker.svg) [Portainer (555x)](portainer/) : Manage your Docker environment with ease
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fconfig.json)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fupdater.json)

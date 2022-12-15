@@ -21,6 +21,7 @@ jobs:
           # Make sure file exists
           file=Stats
           touch "$file"
+          rm "$file"2
           if ! grep -q "Date" "$file"; then
             sed -i "1i Date" "$file"
           fi
@@ -55,7 +56,7 @@ jobs:
               else COUNT3="-";fi
               echo "$SLUG $DOWNLOADS $COUNT1 $COUNT2 $COUNT3" >> "$file"2
               # Create line if not existing
-              if ! grep -q "$SLUG" "$file"; then
+              if ! grep -q "${SLUG}$" "$file"; then
                 sed -i "\$a$SLUG" "$file"
                 # shellcheck disable=SC2046
                 for i in $(seq $(head -n 1 $file | tr -cd ' \t' | wc -c )); do
@@ -84,7 +85,8 @@ jobs:
           # Sort file
           (head -n 2 "$file" && tail -n +3 "$file" | sort -k1 -r -n) > tmp && mv tmp "$file"
 
-          #sed -i "1i Name Total armv7 amd64 aarch64" "$file"
+          sed -i "1i Name Total armv7 amd64 aarch64" "$file"2
+          sed -i "1a ------------------------------" "$file"2
           #TOTAL="$(awk '{SUM+=$2}END{print SUM}' Stats)"
           #TOTAL1="$(awk '{SUM+=$2}END{print SUM}' Stats)"
           #TOTAL2="$(awk '{SUM+=$2}END{print SUM}' Stats)"
