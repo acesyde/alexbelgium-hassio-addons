@@ -1,16 +1,10 @@
 #!/usr/bin/bashio
 # shellcheck shell=bash
 
-rm /etc/nginx/servers/ingress.conf
-exit 0
-
-########
-# TEST #
-########
-if [ -f /config/tandoortest.sh ]; then
-    echo "running test file"
-    chmod +x /config/tandoortest.sh
-    /./config/tandoortest.sh
+if [[ -n "${DISABLE_INGRESS}" ]]; then
+    bashio::log.info "Ingress disabled"
+    sed -i "/nginx/d" /etc/cont-init.d/99-run.sh
+    exit 0
 fi
 
 #################

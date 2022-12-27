@@ -128,12 +128,12 @@ jobs:
 
           # shellcheck disable=SC2002
           echo "Global stats..."
-          STATS_DOWNLOADS="$(cat Stats | awk 'NR==2{print $1}')"
+          STATS_DOWNLOADS="$(awk 'NR==2{print $1}' Stats)"
           sed -i "s|%%STATS_DOWNLOADS%%|$STATS_DOWNLOADS|g" README2.md && \
           sed -i "s|%%STATS_ADDONS%%|$(find . -name "config.json" | wc -l)|g" README2.md && \
-          STATS_ONE="$(cat Stats | awk 'NR==3{print $(NF)}')" && \
-          STATS_TWO="$(cat Stats | awk 'NR==4{print $(NF)}')" && \
-          STATS_THREE="$(cat Stats | awk 'NR==5{print $(NF)}')"
+          STATS_ONE="$(awk 'NR==3{print $(NF)}' Stats)" && \
+          STATS_TWO="$(awk 'NR==4{print $(NF)}' Stats)" && \
+          STATS_THREE="$(awk 'NR==5{print $(NF)}' Stats)"
           sed -i "s|%%STATS_ONE%%|${STATS_ONE^}|g" README2.md
           sed -i "s|%%STATS_TWO%%|${STATS_TWO^}|g" README2.md
           sed -i "s|%%STATS_THREE%%|${STATS_THREE^}|g" README2.md
@@ -154,20 +154,20 @@ jobs:
           #echo $((100*$STATS_THREE/($STATS_ONE+$STATS_TWO+$STATS_THREE)))
           echo "... done"
 
-          # shellcheck disable=SC2002
-          echo "Total downloads..."
           for var in "$STATS_ONE" "$STATS_TWO" "$STATS_THREE"; do
-            j=0; k=0
-           # shellcheck disable=SC2002
+          i=0
+          j=0
+          k=0
+            # shellcheck disable=SC2013
             for i in $(sed -n "/$var/p" Stats); do
               k="$((k+1))"
-              if [ "$k" -eq 2 ]; then break; fi
-              if [ "$i" -gt "$j" 2>/dev/null ]; then j="$i"; fi
+              if [ "$k" -eq 3 ]; then break; fi
+              if [ "$i" -eq "$i" ] && [ "$i" -gt "$j" ]; then j="$i"; fi
             done
-            sed -i "s|${var^}|${var^} (${i}x)|g" README2.md
+          sed -i "s|${var^}|${var^} (${j}x)|g" README2.md
           done
           echo "... done"
-          
+
           # Replace template if change
 
           echo "Replace template..."
